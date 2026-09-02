@@ -5,10 +5,11 @@
   "main": "dist/main.js",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
+    "prestart:prod": "tsc -p tsconfig.json",
     "start": "node dist/main.js",
-    "start:dev": "ts-node src/main.ts",
-    "typeorm": "typeorm-ts-node-commonjs",
-    "schema:sync": "ts-node src/data-source.ts"
+    "start:dev": "tsc -p tsconfig.json && node dist/main.js",
+    "build": "tsc -p tsconfig.json",
+    "schema:sync": "tsc -p tsconfig.json && node dist/data-source.js"
   },
   "keywords": [],
   "author": "",
